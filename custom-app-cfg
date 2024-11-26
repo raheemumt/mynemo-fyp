@@ -1,0 +1,7 @@
+location /exm/ {
+    proxy_pass http://app-mount/;
+}
+
+location /pekse2/ {
+    proxy_pass http://app-mount/;
+}

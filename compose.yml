@@ -1,0 +1,91 @@
+services:
+  
+  #############################################################################################
+  #start secure zone
+  #
+  nginx-proxy:
+    build: ./coreapp/proxy
+    #container_name: mynemo-brain
+    ports:
+    - '80:80'
+    volumes:
+    - ./custom-app-cfg:/etc/nginx/conf.d/custom-app
+    depends_on:
+    - mynemov3
+    - app-mount
+    - app-uploads
+    - db-oracle
+    
+  mynemov3:
+    image: ismearab/appnemo
+    hostname: mynemov3
+    #container_name: mynemov3
+    #ports:
+    #- '10000:80'
+    volumes:
+      - ./app-mynemov3:/var/www/html/public # 
+      - ./coreapp/system:/var/www/html/public/system # 
+      - ./coreapp/www-public/assets:/var/www/html/public/assets # 
+      - ./coreapp/tmp:/tmp     
+    restart: unless-stopped
+    
+  app-uploads:
+    image: ismearab/appnemo
+    hostname: app-uploads
+    #container_name: app-uploads
+    #ports:
+    #- '10001:80'
+    volumes:
+      - ./www-uploads:/var/www/html/public # 
+      - ./coreapp/tmp:/tmp        
+    restart: unless-stopped
+  #
+  #end secure zone
+  ###############################################################################################
+  
+  #
+  #Now u can edit here.. but beware 
+  #
+  app-mount:
+    image: ismearab/appnemo
+    hostname: app-mount
+    #container_name: app-benchfee
+    #ports:
+    #  - "10002:80"  # Adjust port as needed
+    volumes:
+    
+      #adjust your belonging here  
+      - ./app-sample:/var/www/html/public/  # Mount point to Dev folder
+      # Mount point to any apps folder 
+      # eg: D:\dev\ekonferensi
+      #- /run/desktop/mnt/host/d/dev/ekonferensi:/var/www/html/public/
+      
+      ###################################
+      #start core framework.. dont touch them..
+      - ./coreapp/system:/core-ci/ci3/system # Mount volume to application system in the container
+      - ./coreapp/apps-dist/third_party:/var/www/html/public/application/third_party # Mount volume to application system in the container
+      - ./coreapp/apps-dist/vendor:/var/www/html/public/application/vendor # Mount volume to application system in the container
+      - ./coreapp/www-public/assets:/var/www/html/public/assets/monster # Mount volume to asset/template folder in the container
+      - ./www-uploads:/www-uploads # Mount volume to www-upload in the container
+      - ./coreapp/tmp:/tmp # Mount volume to tmp (for session) in the container
+      #end core
+      ###################################
+    restart: unless-stopped
+    
+  db-oracle:
+    build: ./db-oracle-cfg
+    #container_name: mynemo-brain
+    ports:
+    - '49161:1521'
+   
+#  app-db-oracle:
+#    image: ismearab/appdb
+#    hostname: app-db-oracle
+#    #container_name: app-db-oracle
+#    ports:
+#     - "1521:1521"  # Adjust port as needed    
+#    restart: unless-stopped
+    
+  
+    
+
