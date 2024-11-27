@@ -5,7 +5,7 @@
    git clone git@github.com:raheemumt/mynemo-fyp.git 
    ```
    
-2. Run "docker compose up -d --build" for running this app
+2. Run ```docker compose up -d --build``` for running this app
 
 3. Open browser. access to ```http://localhost``` to run the mynemo portal
 
