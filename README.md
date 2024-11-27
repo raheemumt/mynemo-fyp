@@ -68,7 +68,7 @@ app-mount:
    ```
    
   
-5) run docker exec mynemo-fyp-nginx-proxy-1 nginx -s reload
+5) run ```docker exec mynemo-fyp-nginx-proxy-1 nginx -s reload```
    OR
-   docker compose up -d --build
+   ```docker compose up -d --build```
  
