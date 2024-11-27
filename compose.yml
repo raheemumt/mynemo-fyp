@@ -55,10 +55,10 @@ services:
     volumes:
     
       #adjust your belonging here  
-      - ./app-sample:/var/www/html/public/  # Mount point to Dev folder
+      #- ./app-sample:/var/www/html/public/  # Mount point to Dev folder
       # Mount point to any apps folder 
       # eg: D:\dev\ekonferensi
-      #- /run/desktop/mnt/host/d/dev/ekonferensi:/var/www/html/public/
+      - /run/desktop/mnt/host/d/dev/myprojek:/var/www/html/public/
       
       ###################################
       #start core framework.. dont touch them..
