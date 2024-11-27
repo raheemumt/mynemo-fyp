@@ -56,6 +56,7 @@ app-mount:
 
     ------------------
  ```
+2) docker compose up -d --build
 3) edit file custom-app-cfg
 
    put this setting after last line
