@@ -58,10 +58,9 @@ app-mount:
  ```
 3) edit file custom-app-cfg
 
-   > put this setting after last line
+   put this setting after last line
 
-   _eg: _
-   ```
+    ```
    location /my-system/ {
      proxy_pass http://app-mount/;
    }
