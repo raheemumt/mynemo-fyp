@@ -70,22 +70,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'kmskn';
+$active_group = 'default';
 $query_builder = TRUE;
- 
-// $tns =  "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST =db-umt.umt)(PORT = 1521)))".
-// "(CONNECT_DATA = (SERVICE_NAME = umtdb)))";
+
 
 $tns =  "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST =192.168.20.209)(PORT = 1521)))".
    	    "(CONNECT_DATA = (SID = stagdb)))";
 
-  
+$tns =  "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = db-oracle)(PORT = 1521)))".
+   	    "(CONNECT_DATA = (SID = xe)))";
+		
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => $tns,
-	'username' => 'akademik',
-	'password' => 'akademik',
-	//'database' => 'ci3_adminlte_hmvc',
+	'username' => 'up_portal',
+	'password' => 'mypassword',
 	'dbdriver' => 'oci8',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -102,16 +102,12 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
- 
- 
 
-
-$db['kmskn'] = array(
+$db['smsportal-1'] = array(
 	'dsn'	=> '',
 	'hostname' => $tns,
-	'username' => 'kmskn',
-	'password' => 'kmskn',
-	//'database' => 'ci3_adminlte_hmvc',
+	'username' => 'up_portal',
+	'password' => 'mypassword',
 	'dbdriver' => 'oci8',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -128,29 +124,3 @@ $db['kmskn'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
-
-
-
-$db['akademik'] = array(
-	'dsn'	=> '',
-	'hostname' => $tns,
-	'username' => 'akademik',
-	'password' => 'akademik',
-	//'database' => 'ci3_adminlte_hmvc',
-	'dbdriver' => 'oci8',
-	'dbprefix' => '',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'),
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'autoinit' => TRUE,
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
-
