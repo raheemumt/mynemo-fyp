@@ -1,4 +1,4 @@
-**Step to run the contaner**
+**Step to run the container**
 1. Clone this repo to your computer
    ```
    cd d:\dev\
