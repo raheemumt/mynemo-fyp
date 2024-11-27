@@ -15,7 +15,7 @@ _eg_: d:/dev/myProjek
 
 configuration should be as below: 
 
-.......
+```
 app-mount:
     image: ismearab/appnemo
     hostname: app-mount
@@ -43,16 +43,17 @@ app-mount:
     restart: unless-stopped
 
     ------------------
- 
+ ```
 3) edit file custom-app-cfg
 
    > put this setting after last line
 
    _eg: _
+   ```
    location /my-system/ {
      proxy_pass http://app-mount/;
    }
-
+   ```
    
   
 5) run docker exec mynemo-fyp-nginx-proxy-1 nginx -s reload
