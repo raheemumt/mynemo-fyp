@@ -7,11 +7,15 @@
 
 1) edit file compose.yml...
 
-> create new folder outside mynemo-fyp directiry
-_eg_: d:/dev/myProjek
-
+ create new folder outside mynemo-fyp directory: For example
+ ```
+ d:/dev/myProjek
+```
 > comment (#) or remove line 58
-> edit line 61 -> /run/desktop/mnt/host/d/dev/myProjek:/var/www/html/public/
+> edit line 61 ->
+```
+> /run/desktop/mnt/host/d/dev/myProjek:/var/www/html/public/
+```
 
 configuration should be as below: 
 
