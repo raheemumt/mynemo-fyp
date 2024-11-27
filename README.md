@@ -1,14 +1,17 @@
-Run "docker compose up -d --build" for running this app
+**Step to run the contaner**
+1. Run "docker compose up -d --build" for running this app
 
-For custom path
+2. Open browser. access to http://localhost to run the system
+
+**For custom path**
 
 1) edit file compose.yml...
 
-create new folder outside mynemo-fyp directiry
-eg: d:/dev/myProjek
+> create new folder outside mynemo-fyp directiry
+_eg_: d:/dev/myProjek
 
-comment (#) or remove line 58
-edit line 61 -> /run/desktop/mnt/host/d/dev/myProjek:/var/www/html/public/
+> comment (#) or remove line 58
+> edit line 61 -> /run/desktop/mnt/host/d/dev/myProjek:/var/www/html/public/
 
 configuration should be as below: 
 
@@ -43,9 +46,10 @@ app-mount:
  
 3) edit file custom-app-cfg
 
-   add this setting after last line
+   > put this setting after last line
 
-   location /exm/ {
+   _eg: _
+   location /my-system/ {
      proxy_pass http://app-mount/;
    }
 
