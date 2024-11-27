@@ -1,7 +1,15 @@
 **Step to run the contaner**
-1. Run "docker compose up -d --build" for running this app
+1. Clone this repo to your computer
+   ```
+   cd d:\dev\
+   git clone git@github.com:raheemumt/mynemo-fyp.git 
+   ```
+   
+2. Run "docker compose up -d --build" for running this app
 
-2. Open browser. access to http://localhost to run the system
+3. Open browser. access to ```http://localhost``` to run the mynemo portal
+
+4. access to ```http://localhost/sample``` to run the sample system
 
 **For custom path**
 
