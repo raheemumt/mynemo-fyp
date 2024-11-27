@@ -1,4 +1,4 @@
-location /exm/ {
+location /myprojek/ {
     proxy_pass http://app-mount/;
 }
 
