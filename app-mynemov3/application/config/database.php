@@ -74,8 +74,7 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 
-$tns =  "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST =192.168.20.209)(PORT = 1521)))".
-   	    "(CONNECT_DATA = (SID = stagdb)))";
+
 
 $tns =  "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = db-oracle)(PORT = 1521)))".
    	    "(CONNECT_DATA = (SID = xe)))";
