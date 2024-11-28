@@ -378,9 +378,9 @@ class Mainpage extends Nemo_Controller {
 	function refreshlist_fav()
 	{
 		$idstaf 	= $this->input->post('idstaf');
-		$t0204 = $this->t02m->t02_aplikasi($idstaf);
-		$table = $this->load->view('main_fav.php', array("t0204" => $t0204), true);
-		ajaxQuery("#tablefav2")->html($table);
+		//$t0204 = $this->t02m->t02_aplikasi($idstaf);
+		//$table = $this->load->view('main_fav.php', array("t0204" => $t0204), true);
+		//ajaxQuery("#tablefav2")->html($table);
 		ajaxResponse();
 	}
 	public function info_app()
